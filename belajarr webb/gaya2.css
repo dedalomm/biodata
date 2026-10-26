@@ -1,0 +1,116 @@
+/* Stylesheet 2: hijau, menu horizontal */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: #e8f5e9;
+    color: #1b2e20;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .15);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    grid-template-areas:
+        "top top"
+        "menu menu"
+        "main side"
+        "bottom bottom";
+}
+
+#top {
+    grid-area: top;
+    background: #2e9e4f;
+    color: #fff;
+    padding: 24px 20px;
+}
+
+#top h1 { margin: 0; font-size: 2rem; }
+#top p { margin: 4px 0 0; opacity: .85; }
+
+#menubar { grid-area: menu; background: #1b5e20; }
+
+#menubar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menuitem a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menuitem a:hover { background: #2e9e4f; }
+
+.menuitem.aktif a {
+    background: #fff;
+    color: #1b5e20;
+    font-weight: bold;
+}
+
+#main { grid-area: main; padding: 20px; }
+
+#main h2 {
+    margin-top: 0;
+    color: #1b5e20;
+    border-bottom: 2px solid #2e9e4f;
+    padding-bottom: 4px;
+}
+
+#main h3 { margin: 14px 0 0; color: #2e9e4f; }
+#main p, #main dl { margin: 0; }
+
+dt { font-weight: bold; }
+dd { margin: 0 0 6px; color: #4a6350; }
+
+.hobi { margin: 0; padding-left: 20px; }
+
+#sidebar {
+    grid-area: side;
+    background: #e8f5e9;
+    padding: 20px;
+    text-align: center;
+    border-left: 1px solid #c8e6c9;
+}
+
+#sidebar h2 { margin-top: 0; color: #1b5e20; }
+
+#sidebar img {
+    max-width: 100%;
+    height: auto;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+}
+
+#bottom {
+    grid-area: bottom;
+    background: #1b5e20;
+    color: #fff;
+    text-align: center;
+}
+
+#bottom p { margin: 0; padding: 12px; font-size: .9rem; }
+
+@media (max-width: 700px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "top"
+            "menu"
+            "main"
+            "side"
+            "bottom";
+    }
+    #sidebar { border-left: 0; }
+}
